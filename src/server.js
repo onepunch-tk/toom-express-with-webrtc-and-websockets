@@ -1,5 +1,5 @@
-import createError from "http-errors";
 import express from "express";
+import createError from "http-errors";
 import path from "path";
 import logger from "morgan";
 import cookieParser from "cookie-parser";
@@ -8,7 +8,6 @@ import usersRouter from "./routes/users";
 import indexRouter from "./routes";
 
 const server = express();
-
 // view engine setup
 server.set('views', path.join(__dirname, 'views'));
 server.set('view engine', 'pug');
@@ -37,5 +36,6 @@ server.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 export default server;
